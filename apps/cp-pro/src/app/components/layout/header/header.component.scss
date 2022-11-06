@@ -1,0 +1,14 @@
+:host {
+  mat-toolbar {
+    @apply flex justify-between h-14;
+  }
+
+  a,
+  img {
+    @apply h-full;
+  }
+
+  cp-tab-navigation {
+    @apply flex-1;
+  }
+}

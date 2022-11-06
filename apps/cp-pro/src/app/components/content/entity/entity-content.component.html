@@ -1,0 +1,35 @@
+<h1 *ngIf="data.entity" mat-dialog-title>Projekt {{data.entity.id}}</h1>
+<h1 *ngIf="!data.entity" mat-dialog-title>Neues Projekt</h1>
+
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Unternehmen</mat-label>
+      <input formControlName="company" matInput type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Sektor</mat-label>
+      <input formControlName="sector" matInput type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Branche</mat-label>
+      <input formControlName="subsector" matInput type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Land</mat-label>
+      <input formControlName="country" matInput type="text">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Beschreibung</mat-label>
+      <textarea formControlName="description" matInput type="text"></textarea>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end" mat-dialog-actions>
+  <button (click)="dialogRef.close()" mat-button>{{ data.readonly ? 'Schließen' : 'Abbrechen' }}</button>
+  <button (click)="form.valid ? dialogRef.close(form.value) : null" *ngIf="!data.readonly" color="primary" mat-button>Speichern</button>
+</mat-dialog-actions>

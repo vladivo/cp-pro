@@ -1,0 +1,30 @@
+<button [matMenuTriggerFor]="menuAccount" mat-icon-button>
+  <mat-icon fontIcon="person"></mat-icon>
+</button>
+<button [matMenuTriggerFor]="menuSystem" mat-icon-button>
+  <mat-icon fontIcon="settings"></mat-icon>
+</button>
+
+<mat-menu #menuAccount="matMenu">
+  <button mat-menu-item>
+    Mein Profil
+  </button>
+  <button mat-menu-item>
+    Einstellungen
+  </button>
+  <button mat-menu-item>
+    Ausloggen
+  </button>
+</mat-menu>
+
+<mat-menu #menuSystem="matMenu">
+  <button mat-menu-item>
+    Benutzer
+  </button>
+  <button mat-menu-item>
+    Rollen
+  </button>
+  <button mat-menu-item>
+    System
+  </button>
+</mat-menu>

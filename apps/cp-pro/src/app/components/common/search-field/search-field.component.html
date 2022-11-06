@@ -1,0 +1,7 @@
+<mat-form-field>
+  <mat-label>Suche</mat-label>
+  <input (input)="search.emit(value.trim().toLowerCase())" [(ngModel)]="value" matInput type="search">
+  <button (click)="search.emit(value = '')" mat-icon-button matSuffix>
+    <mat-icon>{{ value ? 'close' : 'search' }}</mat-icon>
+  </button>
+</mat-form-field>

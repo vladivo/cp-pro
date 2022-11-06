@@ -1,0 +1,26 @@
+<nav backgroundColor="primary" mat-tab-nav-bar>
+  <a
+    (contextmenu)="openContextMenu($event, menuTrigger)"
+    *ngFor="let location of locations"
+    [active]="active === location"
+    [href]="location.url"
+    cpLink
+    mat-tab-link
+  >
+    {{location.label}}
+
+    <span
+      #menuTrigger="matMenuTrigger"
+      [matMenuTriggerData]="{ location }"
+      [matMenuTriggerFor]="tabMenu"
+      class="invisible"
+    ></span>
+  </a>
+</nav>
+
+<mat-menu #tabMenu="matMenu">
+  <ng-template let-location="location" matMenuContent>
+    <button (click)="closeTab(location)" mat-menu-item>Schließen</button>
+    <button (click)="closeOtherTabs(location)" mat-menu-item>Andere Tabs schließen</button>
+  </ng-template>
+</mat-menu>

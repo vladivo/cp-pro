@@ -1,0 +1,13 @@
+:host {
+  @apply block;
+
+  mat-tree-node {
+    a {
+      @apply px-2 w-full text-left;
+    }
+  }
+
+  mat-icon + span {
+    @apply ml-2;
+  }
+}

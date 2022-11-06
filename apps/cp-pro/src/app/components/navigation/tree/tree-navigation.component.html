@@ -1,0 +1,18 @@
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+  <mat-tree-node *matTreeNodeDef="let node" [matTreeNodePadding]="node.level">
+    <ng-container *ngTemplateOutlet="link; context: node"></ng-container>
+  </mat-tree-node>
+  <mat-tree-node *matTreeNodeDef="let node;when: hasChild" [matTreeNodePadding]="node.level">
+    <button mat-icon-button matTreeNodeToggle>
+      <mat-icon>{{ treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right' }}</mat-icon>
+    </button>
+    <ng-container *ngTemplateOutlet="link; context: node"></ng-container>
+  </mat-tree-node>
+</mat-tree>
+
+<ng-template #link let-location="location">
+  <a [href]="location.url" cpLink mat-button>
+    <mat-icon *ngIf="location.icon" [fontIcon]="location.icon"></mat-icon>
+    <span>{{ location.label }}</span>
+  </a>
+</ng-template>

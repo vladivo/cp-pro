@@ -1,0 +1,13 @@
+:host {
+  @apply h-full;
+}
+
+.controls {
+  @apply flex flex-row justify-between items-center;
+
+  button {
+    mat-icon {
+      @apply -ml-2 mr-1
+    }
+  }
+}

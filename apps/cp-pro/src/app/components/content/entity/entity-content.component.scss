@@ -1,0 +1,11 @@
+:host {
+  @apply block w-96 bg-white p-4;
+
+  mat-form-field {
+    @apply w-full;
+  }
+
+  textarea {
+    @apply h-48 resize-none;
+  }
+}

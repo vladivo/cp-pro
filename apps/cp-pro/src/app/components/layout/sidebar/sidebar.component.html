@@ -1,0 +1,2 @@
+<cp-search-field (search)="filter$.next($event)"></cp-search-field>
+<cp-tree-navigation *ngIf="(tree$ | async) as tree" [root]="tree"></cp-tree-navigation>

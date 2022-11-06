@@ -1,5 +1,122 @@
+@use '@angular/material' as mat;
+
+// Tailwind
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* You can add global styles to this file, and also import other style files */
+// Material
+$md-primary: (
+  50 : #e0f3fc,
+  100 : #b3e2f7,
+  200 : #80cff2,
+  300 : #4dbcec,
+  400 : #26ade8,
+  500 : #009fe4,
+  600 : #0097e1,
+  700 : #008ddd,
+  800 : #0083d9,
+  900 : #0072d1,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+  )
+);
+
+$md-accent: (
+  50 : #f1f0f0,
+  100 : #dbdbdb,
+  200 : #c4c3c3,
+  300 : #acaaaa,
+  400 : #9a9898,
+  500 : #888686,
+  600 : #807e7e,
+  700 : #757373,
+  800 : #6b6969,
+  900 : #585656,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+  )
+);
+
+$md-warn: (
+  50 : #f6e0e4,
+  100 : #e7b3bc,
+  200 : #d88090,
+  300 : #c84d63,
+  400 : #bc2641,
+  500 : #b00020,
+  600 : #a9001c,
+  700 : #a00018,
+  800 : #970013,
+  900 : #87000b,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+  )
+);
+
+$theme: mat.define-light-theme((
+  color: (
+    primary: mat.define-palette($md-primary),
+    accent: mat.define-palette($md-accent),
+    warn: mat.define-palette($md-warn),
+  )
+));
+
+@include mat.core();
+@include mat.all-component-themes($theme);
+
+// Elements
+html,
+body {
+  @apply h-full;
+}
+
+h1 {
+  @apply text-4xl;
+}
+
+.mat-tab-links {
+  .mat-tab-link {
+    @apply opacity-100;
+  }
+}
+
+cp-category-content {
+  a {
+    .mat-button-wrapper {
+      @apply flex flex-col justify-center gap-4;
+      @apply w-48 h-48 text-lg;
+
+      mat-icon {
+        @apply h-20 w-full text-7xl;
+      }
+    }
+  }
+}

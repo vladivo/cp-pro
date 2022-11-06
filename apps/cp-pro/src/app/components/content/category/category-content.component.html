@@ -1,0 +1,8 @@
+<mat-grid-list *ngIf="(location$ | async) as location" cols="5" rowHeight="1:1">
+  <mat-grid-tile *ngFor="let child of location.children">
+    <a [href]="child.url" color="primary" cpLink mat-button>
+      <mat-icon *ngIf="child.icon" [fontIcon]="child.icon"></mat-icon>
+      <span>{{ child.label }}</span>
+    </a>
+  </mat-grid-tile>
+</mat-grid-list>

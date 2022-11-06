@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'cp-pro-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  template: '<cp-page></cp-page>',
 })
 export class AppComponent {
-  title = 'cp-pro';
 }
