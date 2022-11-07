@@ -1,17 +1,17 @@
-import { Dialog } from '@angular/cdk/dialog';
-import { NgTemplateOutlet } from '@angular/common';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { ProjectsFixture } from '../../../fixtures/projects.fixture';
-import { EntityActionType, EntityDialogData, EntityFormModel, ProjectEntityModel } from '../../../models';
+import { EntityFormModel, ProjectEntityModel } from '../../../models';
 import { SearchFieldComponent } from '../../common';
 import { ContentBaseComponent } from '../content-base.component';
-import { EntityContentComponent } from '../entity/entity-content.component';
+import { ProjectEntityContentComponent } from '../entity/project/project-entity-content.component';
 
 @Component({
   selector: 'cp-overview-content',
@@ -26,55 +26,44 @@ import { EntityContentComponent } from '../entity/entity-content.component';
     MatButtonModule,
     MatIconModule,
     NgTemplateOutlet,
-    MatDialogModule
+    MatDialogModule,
+    ProjectEntityContentComponent,
+    NgIf,
+    MatFormFieldModule
   ]
 })
 export class EntityListContentComponent extends ContentBaseComponent implements AfterViewInit {
   public displayedColumns: string[] = ['id', 'company', 'sector', 'subsector', 'country', 'actions'];
-  public columnsToDisplayWithExpand: string[] = [...this.displayedColumns, 'expand'];
-  public expandedElement: ProjectEntityModel | null = null;
   @ViewChild(MatSort) public sort!: MatSort;
   @ViewChild(MatPaginator) public paginator!: MatPaginator;
+  public currentEntity?: ProjectEntityModel;
+  public currentAction?: 'view' | 'edit';
   private entities: ProjectEntityModel[] = ProjectsFixture;
   public dataSource: MatTableDataSource<ProjectEntityModel> = new MatTableDataSource(this.entities);
-
-  public constructor(private readonly dialog: Dialog) {
-    super();
-  }
 
   public ngAfterViewInit() {
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
-  public onAction(entity: ProjectEntityModel, action: EntityActionType): void {
-    switch (action) {
-      case 'read':
-        break;
-    }
-  }
-
   public create(): void {
-    this.openDialog({readonly: false});
+    this.currentAction = 'edit';
   }
 
   public view(entity: ProjectEntityModel): void {
-    this.openDialog({entity, readonly: true});
+    this.currentEntity = entity;
+    this.currentAction = 'view';
   }
 
   public edit(entity: ProjectEntityModel): void {
-    this.openDialog({entity, readonly: false});
+    this.currentEntity = entity;
+    this.currentAction = 'edit';
   }
 
   public delete(entity: ProjectEntityModel): void {
     const index = this.entities.indexOf(entity);
     this.entities.splice(index, 1);
     this.dataSource.data = this.entities;
-  }
-
-  private openDialog(data: EntityDialogData): void {
-    const dialogRef = this.dialog.open<EntityFormModel<ProjectEntityModel>>(EntityContentComponent, {data});
-    dialogRef.closed.subscribe(result => this.processDialogResult(data.entity, result));
   }
 
   private processDialogResult(entity?: ProjectEntityModel, result?: EntityFormModel<ProjectEntityModel>): void {

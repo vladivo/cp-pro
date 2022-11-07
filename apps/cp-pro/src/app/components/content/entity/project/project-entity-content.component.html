@@ -1,0 +1,38 @@
+<h1 *ngIf="entity">Projekt {{entity.id}}</h1>
+<h1 *ngIf="!entity">Neues Projekt</h1>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <mat-form-field>
+    <mat-label>Unternehmen</mat-label>
+    <input formControlName="company" matInput type="text">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Sektor</mat-label>
+    <input formControlName="sector" matInput type="text">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Branche</mat-label>
+    <input formControlName="subsector" matInput type="text">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Land</mat-label>
+    <input formControlName="country" matInput type="text">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Beschreibung</mat-label>
+    <textarea formControlName="description" matInput type="text"></textarea>
+  </mat-form-field>
+
+  <div>
+    <!--
+    <button (click)="dialogRef.close()" mat-button>{{ data.readonly ? 'Schließen' : 'Abbrechen' }}</button>
+    -->
+    <button *ngIf="action === 'edit'" color="primary" mat-button type="submit">Speichern</button>
+  </div>
+</form>
+
+<cp-project-position-entity-content></cp-project-position-entity-content>

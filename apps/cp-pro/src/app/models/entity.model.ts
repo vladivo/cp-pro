@@ -14,6 +14,13 @@ export interface ProjectEntityModel extends EntityBaseModel {
   description?: string,
 }
 
+export interface ProjectPositionModel extends EntityBaseModel {
+  type: 'projectposition',
+  projectid: string,
+  posnumber: string,
+  description: string,
+}
+
 export type EntityFormModel<T extends EntityBaseModel> = Pick<T, Exclude<keyof T, keyof EntityBaseModel>>;
 
 export type EntityDialogData = {

@@ -22,6 +22,11 @@ const ManagementFixture: NavigationNodeModel = {
       icon: 'business_center',
     },
     {
+      name: 'project_positions',
+      label: 'Projekt-Positionen',
+      icon: 'business_center',
+    },
+    {
       name: 'tenders',
       label: 'Angebote',
       icon: 'approval_delegation',

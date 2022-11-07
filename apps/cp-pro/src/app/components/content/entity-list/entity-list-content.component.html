@@ -1,50 +1,51 @@
-<div class="controls">
-  <button (click)="create()" color="primary" mat-flat-button>
-    <mat-icon fontIcon="add"></mat-icon>
-    <span>Neu</span>
-  </button>
-  <cp-search-field (search)="dataSource.filter = $event"></cp-search-field>
-</div>
+<ng-container *ngIf="!currentAction">
+  <div class="controls">
+    <button (click)="create()" color="primary" mat-flat-button>
+      <mat-icon fontIcon="add"></mat-icon>
+      <span>Neu</span>
+    </button>
+    <cp-search-field (search)="dataSource.filter = $event"></cp-search-field>
+  </div>
 
-<mat-table [dataSource]="dataSource" matSort multiTemplateDataRows>
-  <ng-container matColumnDef="id">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>No.</mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
-  </ng-container>
+  <mat-table [dataSource]="dataSource" matSort multiTemplateDataRows>
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>No.</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="company">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Unternehmen</mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.company}} </mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="company">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Unternehmen</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.company}} </mat-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="sector">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Sektor</mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.sector}} </mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="sector">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Sektor</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.sector}} </mat-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="subsector">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Branche</mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.subsector}} </mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="subsector">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Branche</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.subsector}} </mat-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="country">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Land</mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.country}} </mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="country">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Land</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.country}} </mat-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="actions">
-    <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-    <mat-cell *matCellDef="let element">
-      <ng-container *ngTemplateOutlet="actions; context: { element }"></ng-container>
-    </mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <ng-container *ngTemplateOutlet="actions; context: { element }"></ng-container>
+      </mat-cell>
+    </ng-container>
 
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-</mat-table>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
 
-<mat-paginator [pageSizeOptions]="[10, 25, 50]" showFirstLastButtons></mat-paginator>
-
+  <mat-paginator [pageSizeOptions]="[10, 25, 50]" showFirstLastButtons></mat-paginator>
+</ng-container>
 
 <ng-template #actions let-entity="element">
   <button (click)="view(entity)" mat-icon-button>
@@ -57,3 +58,5 @@
     <mat-icon fontIcon="delete"></mat-icon>
   </button>
 </ng-template>
+
+<cp-project-entity-content *ngIf="currentAction" [action]="currentAction" [entity]="currentEntity"></cp-project-entity-content>

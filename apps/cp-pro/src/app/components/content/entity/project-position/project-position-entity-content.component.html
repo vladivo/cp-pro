@@ -1,0 +1,34 @@
+<div class="controls">
+  <button color="primary" mat-flat-button>
+    <mat-icon fontIcon="add"></mat-icon>
+    <span>Neu</span>
+  </button>
+  <cp-search-field (search)="dataSource.filter = $event"></cp-search-field>
+</div>
+
+<mat-table [dataSource]="dataSource" matSort multiTemplateDataRows>
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>No.</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="projectid">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Projekt</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.projectid}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="posnumber">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Positionsnummer</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.posnumber}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Beschreibung</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<mat-paginator [pageSizeOptions]="[10, 25, 50]" showFirstLastButtons></mat-paginator>
