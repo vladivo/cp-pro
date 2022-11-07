@@ -8,7 +8,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     sector: 'Telecommunication',
     subsector: 'Wireless Communication',
     country: 'Germany',
-    description: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.'
+    description: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -17,7 +18,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     sector: 'Telecommunication',
     subsector: 'Telecommunication Services',
     country: 'Germany',
-    description: 'At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues.'
+    description: 'At solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles. Ma quande lingues coalesce, li grammatica del resultant lingue es plu simplic e regulari quam ti del coalescent lingues.',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -26,7 +28,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     sector: 'Industrial',
     subsector: 'Industrial Products & Services',
     country: 'Germany',
-    description: 'A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es.Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.'
+    description: 'A un Angleso it va semblar un simplificat Angles, quam un skeptic Cambridge amico dit me que Occidental es.Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular.',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -34,7 +37,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: '4SC AG',
     sector: 'Pharma & Healthcare',
     subsector: 'Biotechnology',
-    country: 'Germany'
+    country: 'Germany',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -42,7 +46,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: 'AAREAL BANK AG',
     sector: 'Banks',
     subsector: 'Mortgage Banks',
-    country: 'Germany'
+    country: 'Germany',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -50,7 +55,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: 'ABOUT YOU Holding SE',
     sector: 'Retail',
     subsector: 'Retail, Internet',
-    country: 'Germany'
+    country: 'Germany',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -58,7 +64,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: 'ACCENTRO REAL ESTATE AG  O.N.',
     sector: 'Financial Services',
     subsector: 'Real Estate',
-    country: 'Germany'
+    country: 'Germany',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -66,7 +73,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: 'AD PEPPER MEDIA   EO 0,05',
     sector: 'Media',
     subsector: 'Advertising',
-    country: 'Netherlands'
+    country: 'Netherlands',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -74,7 +82,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: 'ADESSO SE  INH O.N.',
     sector: 'Software',
     subsector: 'IT-Services',
-    country: 'Germany'
+    country: 'Germany',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -82,7 +91,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: 'ADIDAS AG NA O.N.',
     sector: 'Consumer',
     subsector: 'Clothing & Footwear',
-    country: 'Germany'
+    country: 'Germany',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -90,7 +100,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: 'ADLER GROUP S.A.',
     sector: 'Financial Services',
     subsector: 'Real Estate',
-    country: 'Luxembourg'
+    country: 'Luxembourg',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -98,7 +109,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: 'ADLER REAL ESTATE AG',
     sector: 'Financial Services',
     subsector: 'Real Estate',
-    country: 'Germany'
+    country: 'Germany',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -106,7 +118,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: 'ADTRAN HOLDINGS INC.',
     sector: 'Technologies',
     subsector: 'Communications Technology',
-    country: 'United States'
+    country: 'United States',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -114,7 +127,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: 'ADVA OPTICAL NETWORKING SE  O.N.',
     sector: 'Technology',
     subsector: 'Communications Technology',
-    country: 'Germany'
+    country: 'Germany',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -122,7 +136,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: 'AIRBUS',
     sector: 'Industrial',
     subsector: 'Heavy Machinery',
-    country: 'Netherlands'
+    country: 'Netherlands',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -130,7 +145,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: 'AIXTRON SE NA O.N.',
     sector: 'Technology',
     subsector: 'Semiconductors',
-    country: 'Germany'
+    country: 'Germany',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -138,7 +154,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: 'ALL FOR ONE GROUP NA O.N.',
     sector: 'Software',
     subsector: 'IT-Services',
-    country: 'Germany'
+    country: 'Germany',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -146,7 +163,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: 'Allane SE',
     sector: 'Financial Services',
     subsector: 'Diversified Financial',
-    country: 'Germany'
+    country: 'Germany',
+    description2: 'interne notiz'
   },
   {
     type: 'project',
@@ -154,7 +172,8 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     company: 'ALLIANZ SE NA O.N.',
     sector: 'Insurance',
     subsector: 'Insurance',
-    country: 'Germany'
+    country: 'Germany',
+    description2: 'interne notiz'
   },
   {
     type: 'project',

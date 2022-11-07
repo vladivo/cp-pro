@@ -1,31 +1,145 @@
 <h1 *ngIf="entity">Projekt {{entity.id}}</h1>
 <h1 *ngIf="!entity">Neues Projekt</h1>
 
-<form (ngSubmit)="onSubmit()" [formGroup]="form">
-  <mat-form-field>
-    <mat-label>Unternehmen</mat-label>
-    <input formControlName="company" matInput type="text">
-  </mat-form-field>
+<form (ngSubmit)="onSubmit()" [formGroup]="form" style="width: 100%">
+  <div fxLayout="row">
+    <mat-card fxFlex>
+      <mat-card-content>
+        <div fxLayout="row">
+          <mat-form-field>
+            <mat-label>Angebot</mat-label>
+            <input formControlName="company" matInput type="text">
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label></mat-label>
+            <input formControlName="company" matInput type="text">
+          </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Sektor</mat-label>
-    <input formControlName="sector" matInput type="text">
-  </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Angebotsstatus</mat-label>
+            <select matNativeControl required>
+              <option value="offen">offen</option>
+              <option value="in Bearbeitung">in Bearbeitung</option>
+              <option value="angenommen">angenommen</option>
+              <option value="abgelehnt">abgelehnt</option>
+            </select>
+          </mat-form-field>
+        </div>
 
-  <mat-form-field>
-    <mat-label>Branche</mat-label>
-    <input formControlName="subsector" matInput type="text">
-  </mat-form-field>
+        <div fxLayout="row">
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Datum</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Land</mat-label>
-    <input formControlName="country" matInput type="text">
-  </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Bindefrist</mat-label>
+            <input matInput [matDatepicker]="picker2">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker2">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+        </div>
 
-  <mat-form-field>
-    <mat-label>Beschreibung</mat-label>
-    <textarea formControlName="description" matInput type="text"></textarea>
-  </mat-form-field>
+        <div fxLayout="row">
+          <mat-form-field>
+            <mat-label>Adresse</mat-label>
+            <input formControlName="subsector" matInput type="text">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label></mat-label>
+            <input formControlName="country" matInput type="text">
+          </mat-form-field>
+        </div>
+
+        <div fxLayout="row">
+          <mat-form-field>
+            <mat-label>Objekt</mat-label>
+            <textarea rows="2" formControlName="description" matInput type="text"></textarea>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card fxFlex>
+      <mat-card-content>
+        <h4>Summen</h4>
+        <mat-form-field>
+          <mat-label>Summen vor Nachlässen</mat-label>
+          <input formControlName="sector" matInput type="text">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Angebotssummen</mat-label>
+          <input formControlName="sector" matInput type="text">
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card fxFlex>
+      <mat-card-content>
+        <h4>interne Info</h4>
+        <mat-form-field>
+          <mat-label></mat-label>
+          <textarea rows="2" formControlName="description2" matInput type="text"></textarea>
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card fxFlex>
+      <mat-card-content>
+        <h4>Weitere Daten</h4>
+        <mat-accordion class="example-headers-align">
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Anschrift
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <mat-form-field appearance="fill">
+              <mat-label>First name</mat-label>
+              <input matInput>
+            </mat-form-field>
+
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Sachbearbeiter und Geschäftsbereich
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <mat-form-field appearance="fill">
+              <mat-label>Country</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </mat-expansion-panel>
+
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Zuordnungen
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+          </mat-expansion-panel>
+
+        </mat-accordion>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
 
   <div>
     <!--

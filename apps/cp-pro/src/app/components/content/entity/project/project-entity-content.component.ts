@@ -4,6 +4,12 @@ import { FormControl, FormsModule, ReactiveFormsModule, UntypedFormGroup, Valida
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { EntityFormModel, ProjectEntityModel } from '../../../../models';
 import { ContentBaseComponent } from '../../content-base.component';
 import { ProjectPositionEntityContentComponent } from '../project-position/project-position-entity-content.component';
@@ -18,9 +24,18 @@ import { ProjectPositionEntityContentComponent } from '../project-position/proje
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatIconModule,
+    MatExpansionModule,
     ReactiveFormsModule,
     NgIf,
-    ProjectPositionEntityContentComponent
+    ProjectPositionEntityContentComponent,
+    FlexLayoutModule
+  ],
+  providers: [
+    MatDatepickerModule,
   ]
 })
 export class ProjectEntityContentComponent extends ContentBaseComponent implements OnInit {
@@ -51,11 +66,16 @@ export class ProjectEntityContentComponent extends ContentBaseComponent implemen
         this.entity?.description ?? '',
         {nonNullable: true}
       ),
+      description2: new FormControl<string>(
+        this.entity?.description2 ?? '',
+        {nonNullable: true}
+      ),
     });
 
     if (this.action === 'view') {
       this.form.disable();
     }
+
   }
 
   public onSubmit(): void {
@@ -63,4 +83,5 @@ export class ProjectEntityContentComponent extends ContentBaseComponent implemen
       this.values.emit(this.form.value);
     }
   }
+
 }

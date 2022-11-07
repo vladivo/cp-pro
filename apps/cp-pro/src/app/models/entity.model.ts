@@ -12,6 +12,7 @@ export interface ProjectEntityModel extends EntityBaseModel {
   subsector: string,
   country: string,
   description?: string,
+  description2?: string,
 }
 
 export interface ProjectPositionModel extends EntityBaseModel {
