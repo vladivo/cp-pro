@@ -46,6 +46,10 @@ export class ProjectEntityContentComponent extends ContentBaseComponent implemen
 
   public ngOnInit(): void {
     this.form = new UntypedFormGroup({
+      id: new FormControl<string>(
+        this.entity?.id ?? '',
+        {nonNullable: true, validators: Validators.required}
+      ),
       company: new FormControl<string>(
         this.entity?.company ?? '',
         {nonNullable: true, validators: Validators.required}

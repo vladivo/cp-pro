@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
@@ -29,11 +30,12 @@ import { ContentBaseComponent } from '../../content-base.component';
     SearchFieldComponent,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCheckboxModule
   ]
 })
 export class ProjectPositionEntityContentComponent extends ContentBaseComponent implements AfterViewInit {
-  public displayedColumns: string[] = ['id', 'projectid', 'posnumber', 'description'];
+  public displayedColumns: string[] = ['typ', 'posnumber', 'pnr', 'miete', 'zuposition', 'lv', 'lvposition', 'ca', 'menge', 'einheit', 'gvh', 'zeiteinheit', 'kurztext'];
   @ViewChild(MatSort) public sort!: MatSort;
   @ViewChild(MatPaginator) public paginator!: MatPaginator;
   private entities: ProjectPositionModel[] = ProjectPositionFixture;

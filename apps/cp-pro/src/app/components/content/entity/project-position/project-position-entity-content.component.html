@@ -1,4 +1,4 @@
-<div class="controls">
+<div class="controls" fxLayout="row">
   <button color="primary" mat-flat-button>
     <mat-icon fontIcon="add"></mat-icon>
     <span>Neu</span>
@@ -7,24 +7,69 @@
 </div>
 
 <mat-table [dataSource]="dataSource" matSort multiTemplateDataRows>
-  <ng-container matColumnDef="id">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>No.</mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
-  </ng-container>
-
-  <ng-container matColumnDef="projectid">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Projekt</mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.projectid}} </mat-cell>
+  <ng-container matColumnDef="typ">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Typ</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.typ}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="posnumber">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Positionsnummer</mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Positions-Nr.</mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.posnumber}} </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="description">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Beschreibung</mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+  <ng-container matColumnDef="pnr">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>PNr</mat-header-cell>
+    <mat-checkbox [(ngModel)]="element.pnr" *matCellDef="let element"></mat-checkbox>
+  </ng-container>
+
+  <ng-container matColumnDef="miete">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Miete</mat-header-cell>
+    <mat-checkbox [(ngModel)]="element.miete" *matCellDef="let element"></mat-checkbox>
+  </ng-container>
+
+  <ng-container matColumnDef="zuposition">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>zu Position</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.zuposition}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="lv">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>LV</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.lv}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="lvposition">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>LV-Positionen</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.lvposition}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="ca">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>ca.</mat-header-cell>
+    <mat-checkbox [(ngModel)]="element.ca" *matCellDef="let element"></mat-checkbox>
+  </ng-container>
+
+  <ng-container matColumnDef="menge">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Menge</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.menge}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="einheit">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Einheit</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.einheit}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="gvh">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>GVH</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.gvh}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="zeiteinheit">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Zeit-Einheit</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.zeiteinheit}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="kurztext">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Kurztext</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.kurztext}} </mat-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

@@ -8,7 +8,7 @@ export const ProjectsFixture: ProjectEntityModel[] = [
     sector: 'Telecommunication',
     subsector: 'Wireless Communication',
     country: 'Germany',
-    description: 'Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.',
+    description: 'Schöndefeld  Flughafen Halle 2, Malerarbeiten',
     description2: 'interne notiz'
   },
   {

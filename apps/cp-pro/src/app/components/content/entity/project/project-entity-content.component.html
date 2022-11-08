@@ -3,14 +3,15 @@
 
 <form (ngSubmit)="onSubmit()" [formGroup]="form" style="width: 100%">
   <div fxLayout="row">
-    <mat-card fxFlex>
+    <mat-card fxFlex class="mr-4">
       <mat-card-content>
+        <h4 style="color: white; background-color: #009fe4">Angebotsdaten</h4>
         <div fxLayout="row">
-          <mat-form-field>
+          <mat-form-field class="mr-4">
             <mat-label>Angebot</mat-label>
-            <input formControlName="company" matInput type="text">
+            <input formControlName="id" matInput type="text">
           </mat-form-field>
-          <mat-form-field>
+          <mat-form-field class="mr-4">
             <mat-label></mat-label>
             <input formControlName="company" matInput type="text">
           </mat-form-field>
@@ -27,7 +28,7 @@
         </div>
 
         <div fxLayout="row">
-          <mat-form-field class="example-full-width" appearance="fill">
+          <mat-form-field class="example-full-width mr-4" appearance="fill">
             <mat-label>Datum</mat-label>
             <input matInput [matDatepicker]="picker">
             <mat-hint>MM/DD/YYYY</mat-hint>
@@ -49,7 +50,7 @@
         </div>
 
         <div fxLayout="row">
-          <mat-form-field>
+          <mat-form-field class="mr-4">
             <mat-label>Adresse</mat-label>
             <input formControlName="subsector" matInput type="text">
           </mat-form-field>
@@ -63,15 +64,15 @@
         <div fxLayout="row">
           <mat-form-field>
             <mat-label>Objekt</mat-label>
-            <textarea rows="2" formControlName="description" matInput type="text"></textarea>
+            <textarea style="height: 50px" formControlName="description" matInput type="text"></textarea>
           </mat-form-field>
         </div>
       </mat-card-content>
     </mat-card>
 
-    <mat-card fxFlex>
+    <mat-card fxFlex class="mr-4">
       <mat-card-content>
-        <h4>Summen</h4>
+        <h4 style="color: white; background-color: #009fe4">Summen</h4>
         <mat-form-field>
           <mat-label>Summen vor Nachlässen</mat-label>
           <input formControlName="sector" matInput type="text">
@@ -84,9 +85,9 @@
       </mat-card-content>
     </mat-card>
 
-    <mat-card fxFlex>
+    <mat-card fxFlex class="mr-4">
       <mat-card-content>
-        <h4>interne Info</h4>
+        <h4 style="color: white; background-color: #009fe4">interne Info</h4>
         <mat-form-field>
           <mat-label></mat-label>
           <textarea rows="2" formControlName="description2" matInput type="text"></textarea>
@@ -96,7 +97,7 @@
 
     <mat-card fxFlex>
       <mat-card-content>
-        <h4>Weitere Daten</h4>
+        <h4 style="color: white; background-color: #009fe4">Weitere Daten</h4>
         <mat-accordion class="example-headers-align">
           <mat-expansion-panel>
             <mat-expansion-panel-header>
@@ -149,4 +150,4 @@
   </div>
 </form>
 
-<cp-project-position-entity-content></cp-project-position-entity-content>
+<cp-project-position-entity-content style="width: 100%"></cp-project-position-entity-content>
